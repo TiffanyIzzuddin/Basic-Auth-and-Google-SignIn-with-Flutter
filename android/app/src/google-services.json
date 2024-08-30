@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "113141175522",
+    "project_id": "flutter-e9ed7",
+    "storage_bucket": "flutter-e9ed7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113141175522:android:f70877c142c85b9ab2babb",
+        "android_client_info": {
+          "package_name": "com.example.ambulance_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4IiCqRpzH84LK_nU5gBMI4wXCENH_QfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
