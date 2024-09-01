@@ -1,3 +1,4 @@
+import 'package:ambulance_mobile/service/auth.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage2 extends StatelessWidget {
@@ -24,8 +25,8 @@ class SignInPage2 extends StatelessWidget {
                     padding: const EdgeInsets.all(32.0),
                     // controlling how a widget sizes itself, ensure it doesn't shrink below a certain size.
                     constraints: const BoxConstraints(maxWidth: 800),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         Expanded(child: _Logo()),
                         Expanded(
                           child: Center(child: _FormContent()),
@@ -74,8 +75,13 @@ class _FormContent extends StatefulWidget {
 }
 
 class __FormContentState extends State<_FormContent> {
-  bool _isPasswordVisible = false;
+  bool _isPasswordVisible = false; // Private variable
   bool _rememberMe = false;
+
+  final AuthService _auth = AuthService();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  String errorMessage = '';
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -90,6 +96,7 @@ class __FormContentState extends State<_FormContent> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextFormField(
+              controller: emailController,
               validator: (value) {
                 // add email validation
                 if (value == null || value.isEmpty) {
@@ -114,6 +121,7 @@ class __FormContentState extends State<_FormContent> {
             ),
             _gap(),
             TextFormField(
+              controller: passwordController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter some text';
@@ -136,7 +144,8 @@ class __FormContentState extends State<_FormContent> {
                         : Icons.visibility),
                     onPressed: () {
                       setState(() {
-                        _isPasswordVisible = !_isPasswordVisible;
+                        _isPasswordVisible =
+                            !_isPasswordVisible; // Can access the private variable
                       });
                     },
                   )),
@@ -173,9 +182,19 @@ class __FormContentState extends State<_FormContent> {
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
-                onPressed: () {
-                  if (_formKey.currentState?.validate() ?? false) {
-                    /// do something
+                onPressed: () async {
+                  // if (_formKey.currentState?.validate() ?? false) {}
+                  dynamic result = await _auth.signInWithEmailAndPassword(
+                    emailController.text,
+                    passwordController.text,
+                  );
+                  if (result == null) {
+                    setState(() {
+                      errorMessage = 'Could not sign in with those credentials';
+                    });
+                  } else {
+                    // pindah halaman
+                    Navigator.pushReplacementNamed(context, '/home');
                   }
                 },
               ),
