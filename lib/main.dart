@@ -1,3 +1,4 @@
+import 'package:ambulance_mobile/form/register.dart';
 import 'package:ambulance_mobile/form/signin.dart';
 import 'package:ambulance_mobile/form/signout.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SignInPage2(),
         '/home': (context) => SignInScreen(),
-        // '/register': (context) => RegisterScreen(),
+        '/register': (context) => register(),
       },
     );
   }

@@ -1,8 +1,8 @@
 import 'package:ambulance_mobile/service/auth.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage2 extends StatelessWidget {
-  const SignInPage2({Key? key}) : super(key: key);
+class register extends StatelessWidget {
+  const register({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -178,13 +178,13 @@ class __FormContentState extends State<_FormContent> {
                 child: const Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Text(
-                    'Sign in',
+                    'Sign up',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
                 onPressed: () async {
                   // if (_formKey.currentState?.validate() ?? false) {}
-                  dynamic result = await _auth.signInWithEmailAndPassword(
+                  dynamic result = await _auth.registerWithEmailAndPassword(
                     emailController.text,
                     passwordController.text,
                   );
@@ -194,22 +194,9 @@ class __FormContentState extends State<_FormContent> {
                     });
                   } else {
                     // pindah halaman
-                    Navigator.pushReplacementNamed(context, '/home');
+                    Navigator.pushReplacementNamed(context, '/');
                   }
                 },
-              ),
-            ),
-            SizedBox(height: 12),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/register');
-              },
-              child: Text(
-                "Register",
-                style: TextStyle(
-                  color: Colors.blue,
-                  decoration: TextDecoration.underline,
-                ),
               ),
             ),
           ],
