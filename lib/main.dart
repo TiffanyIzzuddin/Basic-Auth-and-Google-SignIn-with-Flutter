@@ -1,6 +1,7 @@
+import 'package:ambulance_mobile/form/home.dart';
 import 'package:ambulance_mobile/form/register.dart';
 import 'package:ambulance_mobile/form/signin.dart';
-import 'package:ambulance_mobile/form/signout.dart';
+import 'package:ambulance_mobile/service/signin_link.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => SignInPage2(),
-        '/home': (context) => SignInScreen(),
+        '/home': (context) => AppbarPage(),
+        '/verify': (context) => VerifyEmailLinkScreen(),
         '/register': (context) => register(),
       },
     );

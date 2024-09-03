@@ -205,7 +205,7 @@ class __FormContentState extends State<_FormContent> {
                 Navigator.pushNamed(context, '/register');
               },
               child: Text(
-                "Register",
+                "Sign up",
                 style: TextStyle(
                   color: Colors.blue,
                   decoration: TextDecoration.underline,

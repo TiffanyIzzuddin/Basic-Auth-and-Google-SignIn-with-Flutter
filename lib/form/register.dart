@@ -193,10 +193,38 @@ class __FormContentState extends State<_FormContent> {
                       errorMessage = 'Could not sign in with those credentials';
                     });
                   } else {
-                    // pindah halaman
-                    Navigator.pushReplacementNamed(context, '/');
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: Text('Verify your email'),
+                        content: Text(
+                            'A verification link has been sent to ${emailController.text}. Please check your email and verify your account.'),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              // pindah halaman
+                              Navigator.pushReplacementNamed(context, '/');
+                            },
+                            child: Text('OK'),
+                          ),
+                        ],
+                      ),
+                    );
                   }
                 },
+              ),
+            ),
+            SizedBox(height: 12),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/');
+              },
+              child: Text(
+                "Sign in",
+                style: TextStyle(
+                  color: Colors.blue,
+                  decoration: TextDecoration.underline,
+                ),
               ),
             ),
           ],
