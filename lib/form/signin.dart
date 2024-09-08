@@ -1,8 +1,9 @@
 import 'package:ambulance_mobile/service/auth.dart';
+import 'package:ambulance_mobile/service/google_signin.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage2 extends StatelessWidget {
-  const SignInPage2({Key? key}) : super(key: key);
+class SignInPage extends StatelessWidget {
+  const SignInPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -199,6 +200,12 @@ class __FormContentState extends State<_FormContent> {
                 },
               ),
             ),
+            ElevatedButton(
+              onPressed: () async {
+                await signInWithGoogle(context);
+              },
+              child: Text("Sign in with Google"),
+            ),
             SizedBox(height: 12),
             GestureDetector(
               onTap: () {
@@ -219,5 +226,4 @@ class __FormContentState extends State<_FormContent> {
   }
 
   Widget _gap() => const SizedBox(height: 16);
-  // Widget _register() => Navigator.pushReplacementNamed(context, '/register');
 }

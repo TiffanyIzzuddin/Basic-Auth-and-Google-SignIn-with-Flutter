@@ -12,7 +12,20 @@
           "package_name": "com.example.ambulance_mobile"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "805551205069-3mpucto35ipdtuvkc5o6ugt61nq2pv9b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ambulance_mobile",
+            "certificate_hash": "3ae5703b27101d1489f77fa72a3ee589b312a993"
+          }
+        },
+        {
+          "client_id": "805551205069-tbtfnk66117jn0rthb869vhcgsssqu8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBkU3aDXdFlxNbBis6Sb71dURXSFw5HlNI"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "805551205069-tbtfnk66117jn0rthb869vhcgsssqu8p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "805551205069-118fhqvr55h50n7kjuh9orfku0lg8l2n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ambulanceMobile"
+              }
+            }
+          ]
         }
       }
     }

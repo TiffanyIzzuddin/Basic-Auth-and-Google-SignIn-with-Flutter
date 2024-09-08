@@ -28,21 +28,19 @@ class _VerifyEmailLinkScreenState extends State<VerifyEmailLinkScreen> {
       String? email =
           'stored_user_email@example.com'; // Replace with actual retrieval
 
-      if (email != null) {
-        try {
-          User? user =
-              await _auth.signInWithEmailLink(email, emailLink.toString());
-          if (user != null) {
-            setState(() {
-              infoMessage = 'Successfully signed in!';
-            });
-            Navigator.pushReplacementNamed(context, '/home');
-          }
-        } catch (e) {
+      try {
+        User? user =
+            await _auth.signInWithEmailLink(email, emailLink.toString());
+        if (user != null) {
           setState(() {
-            infoMessage = 'Error signing in: $e';
+            infoMessage = 'Successfully signed in!';
           });
+          Navigator.pushReplacementNamed(context, '/home');
         }
+      } catch (e) {
+        setState(() {
+          infoMessage = 'Error signing in: $e';
+        });
       }
     }
   }

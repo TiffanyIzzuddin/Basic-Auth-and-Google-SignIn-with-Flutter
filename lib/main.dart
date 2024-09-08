@@ -1,7 +1,7 @@
 import 'package:ambulance_mobile/form/home.dart';
 import 'package:ambulance_mobile/form/register.dart';
 import 'package:ambulance_mobile/form/signin.dart';
-import 'package:ambulance_mobile/service/signin_link.dart';
+import 'package:ambulance_mobile/service/verify_popup.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -23,12 +23,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Firebase Auth',
-      // home: SignInPage2(),
-      // home: SignInScreen(),
       initialRoute: '/',
       routes: {
-        '/': (context) => SignInPage2(),
-        '/home': (context) => AppbarPage(),
+        '/': (context) => SignInPage(),
+        '/home': (context) => HomePage(),
         '/verify': (context) => VerifyEmailLinkScreen(),
         '/register': (context) => register(),
       },
