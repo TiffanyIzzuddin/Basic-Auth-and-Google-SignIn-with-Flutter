@@ -1,6 +1,9 @@
 # ambulance_mobile
 
-A new Flutter project.
+FYI
+You cant run this code immediately, so please take the needed file in lib folder.
+also add the needed library.
+also dont forget to connect with your firebase with gradle file.
 
 ## Getting Started
 
